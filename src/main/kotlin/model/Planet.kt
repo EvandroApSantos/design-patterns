@@ -1,7 +1,8 @@
 package model
 
 interface Planet {
-    val diameter: Double
+    val diameter: Int
+    val distanceFromSun: Long
     fun getName(): PlanetNameEnum
     fun greetings(): String
 }
@@ -18,7 +19,8 @@ enum class PlanetNameEnum {
 }
 
 class Earth: Planet {
-    override val diameter = 12.742
+    override val diameter = 12742
+    override val distanceFromSun = 147_100_000L
 
     override fun getName(): PlanetNameEnum = PlanetNameEnum.EARTH
 
@@ -27,7 +29,8 @@ class Earth: Planet {
 }
 
 class Mars: Planet {
-    override val diameter = 6.779
+    override val diameter = 6779
+    override val distanceFromSun = 228_230_000L
 
     override fun getName(): PlanetNameEnum = PlanetNameEnum.MARS
 
