@@ -7,7 +7,7 @@ class SpaceshipTravelFacade {
         val originPlanet = SimpleFactory.getPlanetInstance(PlanetNameEnum.valueOf(origin))
         val destinationPlanet = SimpleFactory.getPlanetInstance(PlanetNameEnum.valueOf(destination))
 
-        val spaceship = Spaceship(originPlanet, destinationPlanet)
+        val spaceship = SpaceshipTravel(originPlanet, destinationPlanet)
         spaceship.calculateDistance()
         spaceship.calculateTimeOfTravel()
         spaceship.displayTravelInfo()
@@ -17,7 +17,7 @@ class SpaceshipTravelFacade {
     }
 }
 
-class Spaceship(
+class SpaceshipTravel(
     val origin: Planet,
     val destination: Planet
 ) {
@@ -54,9 +54,9 @@ class Spaceship(
 }
 
 class GroundControl {
-    fun handleSpaceship(spaceship: Spaceship) {
+    fun handleSpaceship(spaceshipTravel: SpaceshipTravel) {
         println("This is ground control.")
-        println("I'll be with you from ${spaceship.origin.getName()} to ${spaceship.destination.getName()}")
+        println("I'll be with you from ${spaceshipTravel.origin.getName()} to ${spaceshipTravel.destination.getName()}")
     }
 }
 
